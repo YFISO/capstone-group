@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D CP MONITOR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+     rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+<script>CP.js</script>
+</head>
+<body>
+    <header>
+        <h1>3D PRINTING MONITOR</h1>
+        <h2>UJ AND ACC WRP</h2>
+
+        <!-- File input button added to the header -->
+        <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+            <!-- Print Quality button added to the header -->
+            <button id="printQualityButton">Print Quality</button>
+
+            <!-- Print Properties button added to the header -->
+            <button id="printPropertiesButton">Print Properties</button>
+
+            <!-- Report button added to the header -->
+            <button id="reportButton">Report</button>
+
+            <!-- Minimize and Maximize buttons added to the header -->
+            <div class="minimize-maximize-buttons">
+                <button id="minimizeButton">−</button>
+                <button id="maximizeButton">+</button>
+            </div>
+        </nav>
+    </header>
+    <!-- Dashboard Section with Container -->
+<!-- Dashboard Section with Container -->
+<section class="dashboard-container">
+    <div class="dashboard-content">
+        <!-- Image within the dashboard -->
+        <img src="images/CP-MONITOR.png" alt="Dashboard Image" class="dashboard-image">
+        
+        <!-- Widgets and content within the dashboard section -->
+        <div class="widget">
+            <!-- Upload buttons container -->
+            <div class="upload-buttons">
+                <button id="uploadButton" class="small-button">OPEN</button>
+                <label for="fileInput">NEW</label>
+                <input type="file" id="fileInput" accept=".stl, .obj, .gcode">
+            </div>
+        </div>
+
+        <!-- Empty container for the new widget -->
+        <div id="newWidgetContainer"></div>
+    </div>
+</section>
+
+    <script>
+        // Access previous files when the "File" button is clicked
+        document.getElementById('uploadButton').addEventListener('click', function() {
+            // Access previous files here and perform any necessary actions
+            alert('Accessing previous files...');
+            // You can add more code here to handle accessing previous files.
+        });
+
+        // Handle Print Quality button click
+        document.getElementById('printQualityButton').addEventListener('click', function() {
+            // Implement functionality for the Print Quality button here
+            alert('Clicked Print Quality button. Implement your logic here.');
+            // You can add more code here to handle print quality settings or actions.
+        });
+
+        // Handle Print Properties button click
+        document.getElementById('printPropertiesButton').addEventListener('click', function() {
+            // Implement functionality for the Print Properties button here
+            alert('Clicked Print Properties button. Implement your logic here.');
+            // You can add more code here to handle print properties or actions.
+        });
+
+        // Handle Report button click
+        document.getElementById('reportButton').addEventListener('click', function() {
+            // Implement functionality for the Report button here
+            alert('Clicked Report button. Implement your logic here.');
+            // You can add more code here to generate or display a report.
+        });
+
+        // Handle Minimize button click
+        document.getElementById('minimizeButton').addEventListener('click', function() {
+            // Implement functionality for the Minimize button here
+            alert('Clicked Minimize button. Implement your logic here.');
+            // You can add more code here to minimize or hide the dashboard section.
+        });
+
+        // Handle Maximize button click
+        document.getElementById('maximizeButton').addEventListener('click', function() {
+            // Implement functionality for the Maximize button here
+            alert('Clicked Maximize button. Implement your logic here.');
+            // You can add more code here to maximize or expand the dashboard section.
+        });
+    </script>
+</body>
+</html>
