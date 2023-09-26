@@ -1,3 +1,8 @@
+/* header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
 /* Reset some default styles */
 html, body, div, p {
     margin: 0;
@@ -53,7 +58,99 @@ header h1 {
 
 .data-element p {
     font-size: 16px;
-    margin: 0;
+    margin: 0;}
+
+#display_image{
+    width: 375px;
+    height:211px;
+    background-position: center;
+    border: 1px solid black;
+    background-size: cover;
+}
+
+.supportLinksPanel span{
+    display: block;
+}
+
+.upload-buttons{
+    display: flex;
+    flex-direction: column;
+}
+.upload-buttons #uploadButton{
+    min-width: 50px;
+    
+}
+.dashboard-content{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.widget{
+    display: inline;
 }
 
 
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f7;
+  }
+  
+  .header {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .gallery::after {
+    content: "";
+    width: 350px;
+  }
+
+.button {
+  padding: 5px 10px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {background-color: #2a2e2a}
+
+.button:active {
+  background-color: #000000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
