@@ -16,55 +16,35 @@
     <header>
         <h1>3D PRINTING MONITOR.</h1>
         <h2>UJ AND ACC WRP</h2>
+        <div class="header">
+        <div class="buttons">
+            <button class="button nav-button" id="printQualityButton">Print Quality</button>
+            <button class="button nav-button" id="printPropertiesButton">Print Properties</button>
+        </div>
+    </div>
+    <div id="printingQualityModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeQualityModal">&times;</span>
+            <h2>Printing Quality Information</h2>
+            <p id="qualityModalContent">
+                <!-- This is where the dynamic content will be added -->
+            </p>
+            <button class="small-button" id="newButtonQuality">NEW</button> <!-- Replaced "Print" with "NEW" button -->
+        </div>
+    </div>
 
-        <!-- File input button added to the header -->
-        <!-- <nav class="navbar navbar-expand-sm justify-content-center"> -->
-            <!-- Print Quality button added to the header -->
-            <!-- <button id="printQualityButton">Print Quality</button> -->
-
-            <!-- Print Properties button added to the header -->
-            <!-- <button id="printPropertiesButton">Print Properties</button> -->
-
-            <!-- Report button added to the header -->
-            <!-- <button id="reportButton">Report</button> -->
-
-            <!-- Minimize and Maximize buttons added to the header -->
-            <!-- <div class="minimize-maximize-buttons"> -->
-                <!-- <button id="minimizeButton">−</button>
-                <button id="maximizeButton">+</button>
-            </div> -->
-        <!-- </nav> -->
-
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        </li>
-                        <li class="nav-item">
-                            
-                            <a class="nav-link" href="page2.html"><button class="button nav-button">Print Quality</button> </a>
-                        </li>
-                        <li class="nav-item">
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="page3.html"><button class="button nav-button">Print Properties</button> </a>
-                        </li>
-                        <li class="nav-item">
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="page4.html"><button class="button nav-button">Report</button></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+    <!-- Modal for Print Properties Information -->
+    <div id="printPropertiesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closePropertiesModal">&times;</span>
+            <h2>Print Properties Information</h2>
+            <p id="propertiesModalContent">
+                <!-- This is where the dynamic content will be added -->
+            </p>
+            <button class="small-button" id="newButtonProperties">NEW</button> <!-- Replaced "Print" with "NEW" button -->
+        </div>
+    </div>
+        
 
     </header>
 
@@ -73,42 +53,73 @@
     <section class="dashboard-container">
         <div class="dashboard-content" >
             <!-- Image within the dashboard -->
-            <!-- <img src="images/CP-MONITOR.png" alt="Dashboard Image" class="dashboard-image"> -->
+             <img src="images/CP-MONITOR.png" alt="Dashboard Image" class="dash" style="width: 200px; height: 150px;"> 
 
             <!-- Widgets and content within the dashboard section -->
             <div class="widget" style="background-color: aqua;">
                 <!-- Upload buttons container -->
                 <div class="upload-buttons">
-                    <button id="uploadButton" class="small-button">OPEN</button>
-                    <label for="fileInput">NEW<input type="file" id="fileInput" accept=".png,.stl, .obj, .gcode"></label>
-
-                    
+                    <a href="Second.html"><button class="small-button">NEW</button></a>
+                    <label for="fileInput">OPEN<input type="file" id="fileInput" accept=".png,.stl,.obj,.gcode"></label>
                     <div id="display_image" style="display: none;"></div>
                 </div>
-            </div>
-
-            <!-- Empty container for the new widget -->
-            <div id="newWidgetContainer" style="background-color: whitesmoke;">
-                <h1>CURRENT PRINTING</h1>
-                <section>
-                    <button class="toggler" data-bs-toggle="collapse" data-bs-target="#demo">Collapsible</button>
-
-                    <div id="demo" class="collapse">
-                        Lorem ipsum dolor text....
-                    </div>
-
-                    <span><i class="fs-4 bi-grid"></i></span>
-                </section>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="supportLinksPanel">
-        <span><ion-icon name="chevron-forward-outline"></ion-icon>Help</span>
-        <span><ion-icon name="chevron-forward-outline"></ion-icon>Tutorial</span>
-        <span><ion-icon name="chevron-forward-outline"></ion-icon>Community</span>
+                </div>
+                </div>
+<div class="grid-container">
+    <h1>CURRENT PRINTING STATUS</h1>
+    <p>Printing Speed: 60 mm/s</p>
+    <p>Images Generated: 15</p>
+    <p>Printing Temperature: 210°C</p>
+    <div class="grid-items">
+        <figure>
+            <img src="images/img_003.jpeg" alt="Image 1" class="dashboard-image">
+            <figcaption>Warping</figcaption>
+        </figure>
+        <figure>
+            <img src="images/img_016.jpeg" alt="Image 2" class="dashboard-image">
+            <figcaption>Normal</figcaption>
+        </figure>
+        <figure>
+            <img src="images/img_028.jpeg" alt="Image 3" class="dashboard-image">
+            <figcaption>Layer Shift</figcaption>
+        </figure>
+        <figure>
+            <img src="images/img_037.jpeg" alt="Image 4" class="dashboard-image">
+            <figcaption>Printing Inconsistency</figcaption>
+        </figure>
     </div>
+</div>
+
+                
+            
+        </section>
+            <!-- Empty container for the new widget -->
+<section class="larger-section">
+    <div class="supportLinksPanel">
+        <div><button onclick="toggleSection('helpInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Help</button></div>
+        <div><button onclick="toggleSection('tutorialInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Tutorial</button></div>
+        <div><button onclick="toggleSection('communityInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Community</button></div>
+    </div>
+    
+    <div id="helpInfo" style="display: none;">
+        <!-- Content for the Help section -->
+        <p>This is the Help section. Here, you can find information and resources to assist you with your questions and issues.</p>
+        <!-- Add more content as needed -->
+    </div>
+    
+    <div id="tutorialInfo" style="display: none;">
+        <!-- Content for the Tutorial section -->
+        <p>Welcome to the Tutorial section. Here, you can access various tutorials to help you learn and improve your skills.</p>
+        <!-- Add more content as needed -->
+    </div>
+    
+    <div id="communityInfo" style="display: none;">
+        <!-- Content for the Community section -->
+        <p>This is the Community section. Connect with others, ask questions, and engage with the community to get support and share knowledge.</p>
+        <!-- Add more content as needed -->
+    </div>  
+</section>
+
     <footer>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
             <div class="container-fluid">
@@ -130,7 +141,7 @@
             </div>
         </nav>
     </footer>
-
+<script src="more-info.js"></script>
     <script src="main.js"> </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D CP MONITOR</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <script>CP.js</script> -->
+</head>
+
+<body>
+    <header>
+        <h1>3D PRINTING MONITOR.</h1>
+        <h2>UJ AND ACC WRP</h2>
+        <div class="header">
+            <div class="buttons">
+                <button id="rawImagesButton" data-set="raw">Raw Images</button>
+                <button id="labeledImagesButton" data-set="labeled">filteresData</button>
+            </div>
+        </div>
+    </header>
+    <p>Printing Speed: 60 mm/s</p>
+    <p>Images Generated: 15</p>
+    <p>Printing Temperature: 210°C</p>
+    <div id="imageContainer"></div>
+    <p id="imageCountText">Images: 0</p>
+
+    <script>
+        // JavaScript function to load and display images based on the selected category
+        function loadImages(category) {
+            // Get the container element for displaying images
+            var imageContainer = document.getElementById('imageContainer');
+
+            // Clear any previously displayed images
+            imageContainer.innerHTML = '';
+
+            // Define image sources based on the selected category
+            var imageSources = [];
+            var categoryText = '';
+
+            if (category === 'raw') {
+                imageSources = [
+                    'train/Warping/img_083.jpeg',
+                    'train/Warping/img_083.jpeg',
+                'train/Warping/img_089.jpeg',
+                'train/Warping/img_071.jpeg',
+                'train/Warping/img_001.jpeg',
+                'train/Warping/img_009.jpeg',
+                'train/Warping/img_019.jpeg',
+                'train/Under-Extrusion/img_084.jpeg',
+                'train/Under-Extrusion/img_075.jpeg',
+                'train/Under-Extrusion/img_073.jpeg',
+                'train/Normal/img_005.jpeg',
+                              'train/Normal/img_005.jpeg',
+                'train/Normal/img_006.jpeg',
+               'train/Normal/img_033.jpeg', 
+                'train/Normal/img_036.jpeg' ,
+               ' train/Normal/img_059.jpeg',
+                ' train/Normal/img_057.jpeg', 
+                ' train/Normal/img_066.jpeg ',
+                 'train/Normal/img_080.jpeg ',
+                ' train/Normal/img_082.jpeg ',
+                ' train/Normal/img_090.jpeg ',
+                 'train/Normal/img_107.jpeg ',
+                 'train/Normal/img_115.jpeg ',
+                 'train/Normal/img_122.jpeg ',
+                 'train/Normal/img_123.jpeg ',
+                ' train/Normal/img_135.jpeg ',
+                 'train/Normal/img_138.jpeg ',
+                ' train/Normal/img_140.jpeg' ,
+                 'train/Normal/img_145.jpeg ',
+                 'train/Normal/img_146.jpeg' ,
+                 'train/Normal/img_147.jpeg ',
+                 'train/Normal/img_149.jpeg ',
+                 'train/Normal/img_155.jpeg ',
+                 'train/Normal/img_163.jpeg', 
+                
+                 'train/Normal/img_177.jpeg',
+                ' train/Normal/img_166.jpeg '
+                    // Add more raw image URLs as needed
+                ];
+                categoryText = 'Raw Images';
+            } else if (category === 'FilteredData') {
+                // Define labeled image sources for four categories
+                var labeledImageSources = {
+                    'Normal': [
+                    'train/Normal/img_008.jpeg ',
+'train/Normal/img_006.jpeg ',
+'train/Normal/img_005.jpeg' ,
+'train/Normal/img_011.jpeg' ,
+'train/Normal/img_027.jpeg ',
+'train/Normal/img_033.jpeg' ,
+'train/Normal/img_036.jpeg ',
+'train/Normal/img_057.jpeg ',
+'train/Normal/img_066.jpeg ',
+'train/Normal/img_080.jpeg ',
+'train/Normal/img_059.jpeg ',
+'train/Normal/img_082.jpeg ',
+'train/Normal/img_090.jpeg ',
+'train/Normal/img_115.jpeg ',
+'train/Normal/img_107.jpeg ',
+'train/Normal/img_122.jpeg ',
+'train/Normal/img_123.jpeg ',
+'train/Normal/img_138.jpeg', 
+'train/Normal/img_135.jpeg ',
+'train/Normal/img_140.jpeg', 
+'train/Normal/img_145.jpeg', 
+'train/Normal/img_146.jpeg ',
+'train/Normal/img_147.jpeg' ,
+'train/Normal/img_149.jpeg' ,
+'train/Normal/img_155.jpeg',
+// Add more images for Category 1 as needed
+                    ],
+                    'Layer-Shift': [
+                    'train/Layer-shift/img_003.jpeg ',
+'train/Layer-shift/img_016.jpeg ',
+'train/Layer-shift/img_028.jpeg', 
+'train/Layer-shift/img_037.jpeg' ,
+'train/Layer-shift/img_041.jpeg ',
+'train/Layer-shift/img_048.jpeg ',
+'train/Layer-shift/img_043.jpeg ',
+'train/Layer-shift/img_049.jpeg ',
+'train/Layer-shift/img_061.jpeg',
+'train/Layer-shift/img_055.jpeg ',
+'train/Layer-shift/img_081.jpeg' ,
+'train/Layer-shift/img_098.jpeg',
+ 'train/Layer-shift/img_101.jpeg', 
+ 'train/Layer-shift/img_097.jpeg',
+  'train/Layer-shift/img_109.jpeg',
+   'train/Layer-shift/img_116.jpeg ',
+   'train/Layer-shift/img_118.jpeg',
+    'train/Layer-shift/img_128.jpeg ',
+    'train/Layer-shift/img_132.jpeg',
+    'train/Layer-shift/img_136.jpeg',
+  'train/Layer-shift/img_137.jpeg',
+     ' train/Layer-shift/img_154.jpeg ',
+      'train/Layer-shift/img_159.jpeg ',
+     ' train/Layer-shift/img_174.jpeg ',
+     ' train/Layer-shift/img_175.jpeg ',
+      'train/Layer-shift/img_195.jpeg ',
+      'train/Layer-shift/img_197.jpeg ',
+      'train/Layer-shift/img_207.jpeg ',
+     ' train/Layer-shift/img_216.jpeg ',
+     ' train/Layer-shift/img_210.jpeg ',
+     ' train/Layer-shift/img_221.jpeg ',
+      'train/Layer-shift/img_237.jpeg', 
+     ' train/Layer-shift/img_251.jpeg ',
+      'train/Layer-shift/img_244.jpeg'   
+                        // Add more images for Category 2 as needed
+                    ],
+                    'Under-Extrusion': [
+                    'train/Under-Extrusion/img_079.jpeg', 
+         'train/Under-Extrusion/img_000.jpeg', 
+         'train/Under-Extrusion/img_007.jpeg ',
+         'train/Under-Extrusion/img_004.jpeg' ,
+         'train/Under-Extrusion/img_013.jpeg' ,
+         'train/Under-Extrusion/img_024.jpeg ',
+         'train/Under-Extrusion/img_051.jpeg' ,
+         'train/Under-Extrusion/img_069.jpeg ',
+         'train/Under-Extrusion/img_070.jpeg ',
+         'train/Under-Extrusion/img_073.jpeg ',
+         'train/Under-Extrusion/img_075.jpeg ',
+         'train/Under-Extrusion/img_084.jpeg' ,
+         'train/Under-Extrusion/img_095.jpeg' ,
+         'train/Under-Extrusion/img_117.jpeg', 
+         'train/Under-Extrusion/img_142.jpeg' ,
+         'train/Under-Extrusion/img_131.jpeg ',
+         'train/Under-Extrusion/img_185.jpeg ',
+        ' train/Under-Extrusion/img_189.jpeg ',
+         'train/Under-Extrusion/img_223.jpeg ',
+         'train/Under-Extrusion/img_247.jpeg ',
+         'train/Under-Extrusion/img_249.jpeg ',
+         'train/Under-Extrusion/img_271.jpeg' ,
+         'train/Under-Extrusion/img_277.jpeg'    
+                        // Add more images for Category 3 as needed
+                    ],
+                    'Warping': [
+                    'train/Warping/img_001.jpeg ',
+             'train/Warping/img_009.jpeg' ,
+             'train/Warping/img_019.jpeg' ,
+             'train/Warping/img_021.jpeg ',
+             'train/Warping/img_042.jpeg ',
+             'train/Warping/img_045.jpeg ',
+             'train/Warping/img_050.jpeg ',
+             'train/Warping/img_083.jpeg ',
+            ' train/Warping/img_093.jpeg ',
+             'train/Warping/img_105.jpeg' ,
+             'train/Warping/img_089.jpeg' ,
+             'train/Warping/img_052.jpeg' ,
+             'train/Warping/img_071.jpeg ',
+             'train/Warping/img_106.jpeg' ,
+             'train/Warping/img_112.jpeg ',
+             'train/Warping/img_144.jpeg' ,
+             'train/Warping/img_119.jpeg', 
+             'train/Warping/img_110.jpeg' ,
+             'train/Warping/img_148.jpeg ',
+             'train/Warping/img_151.jpeg ',
+             'train/Warping/img_161.jpeg ',
+             'train/Warping/img_156.jpeg ',
+           '  train/Warping/img_168.jpeg ',
+             'train/Warping/img_176.jpeg ',
+             'train/Warping/img_172.jpeg ',
+             'train/Warping/img_173.jpeg'    
+                        // Add more images for Category 4 as needed
+                    ]
+                };
+
+                // Check if the category exists and load images
+                if (labeledImageSources.hasOwnProperty(category)) {
+                    imageSources = filteredDatamageSources[category];
+                }
+
+                categoryText = 'Filtered Data';
+            }
+
+            // Count of images under the selected category
+            var imageCount = imageSources.length;
+
+            // Update the text indicating the number of images in the selected category
+            var imageCountText = document.getElementById('imageCountText');
+            imageCountText.textContent = categoryText + ': ' + imageCount;
+
+            // Display up to the first 10 images with spacing
+            var maxImagesToDisplay = 12;
+            for (var i = 0; i < imageCount && i < maxImagesToDisplay; i++) {
+                var img = document.createElement('img');
+
+                // Set the source (URL) of the image
+                img.src = imageSources[i];
+
+                // Set optional attributes like alt text and dimensions
+                img.alt = categoryText + ' Image ' + (i + 1);
+                img.width = 200; // Adjust the width as needed
+                img.height = 150; // Adjust the height as needed
+
+                // Append the image to the container
+                imageContainer.appendChild(img);
+            }
+        }
+
+        // Add click event listeners to the buttons
+        var rawImagesButton = document.getElementById('rawImagesButton');
+        var filteredDataButton = document.getElementById('labeledImagesButton');
+
+        if (rawImagesButton) {
+            rawImagesButton.addEventListener('click', function () {
+                loadImages('raw');
+            });
+        }
+
+        if (filteredDataButton) {
+    filteredDataButton.addEventListener('click', function () {
+        loadImages('FilteredData'); // Use 'FilteredData' as the category
+    });
+}
+        
+    </script>
+
+<button id="goToThirdPageButton">Start Analysis</button>
+
+
+
+
+
+    
+   
+<footer>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><ion-icon name="home-outline"></ion-icon> Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+        </div>
+    </nav>
+</footer>
+
+<script src="more-info.js"></script>
+  <script src="second.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+  
+     
+</body>
+
+</html>

@@ -1,9 +1,29 @@
-/* header{
+.header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-/* Reset some default styles */
+    justify-content: space-between; /* Align buttons to the right */
+    align-items: center; /* Vertically center align */
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Button styles */
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+    /* Add your modal styles here */
+}
+
+.modal-content {
+    /* Add your modal content styles here */
+}
 html, body, div, p {
     margin: 0;
     padding: 0;
@@ -153,4 +173,102 @@ header h1 {
   background-color: #000000;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+.larger-section {
+    padding: 20px; /* Add more padding as needed */
+}
+
+/* Style for the buttons */
+.supportLinksPanel button {
+    font-size: 18px; /* Increase the font size as needed */
+}
+
+/* Style for the footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar {
+    /* Adjust navbar styles if needed */
+}
+/* Add this CSS to style the dashboard elements */
+.dashboard-container {
+    display: flex;
+    flex-direction: row; /* Display items horizontally */
+    align-items: center; /* Center-align items vertically */
+    border-bottom: 2px solid #000; /* You can adjust the border properties as needed */
+    padding-bottom: 20px; /* Add padding to separate the line from content */
+
+}
+
+.dashboard-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px; /* Adjust the padding as desired */
+}
+
+.dashboard-image-container {
+    margin-right: 20px; /* Add margin between image and widget */
+}
+
+.dashboard-info {
+    margin-right: 20px; /* Add margin between image info and grid */
+}
+
+.grid-container {
+    text-align: center;
+}
+
+
+.dashboard-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+}
+
+
+.grid-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+    gap: 20px; /* Adjust the gap between items as needed */
+    justify-content: center;
+}
+
+.grid-container {
+    text-align: center;
+}
+
+.dashboard-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 2fr); /* Adjust the number of columns as needed */
+    gap: 20px; /* Adjust the gap between items as needed */
+    justify-content: center;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+/* Styles for hiding captions */
+.hidden {
+    display: none;
+}
+#imageContainer img {
+    margin-right: 10px; /* Adjust the margin as needed */
 }
