@@ -272,3 +272,98 @@ footer {
 #imageContainer img {
     margin-right: 10px; /* Adjust the margin as needed */
 }
+
+
+.gallery {
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 5px;
+    max-width: 1200px;
+    /* margin: 0 auto; */
+    padding: 10px 5px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 350px;
+    /* height: 300px; */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery::after {
+    content: "";
+    width: 350px;
+}
+.dashboard-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+}
+.aside {
+    max-width: 200px;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+figcaption {
+    text-align: center;
+    padding-top: 2px;
+}
+
+aside .normal {
+    background-color: green;
+}
+
+
+
+
+aside .wrapping {
+    background-color: yellow;
+}
+
+aside .layer {
+    background-color: red;
+}
+
+aside .extruding {
+    background-color: grey;
+}
+
+/* Style the <li> elements */
+.aside ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    /* Adjust as needed */
+}
+
+/* Style the <div> elements */
+.aside ul li .dot {
+    margin-left: 10px;
+    /* Adjust the spacing between text and the dot */
+}
+
+.anomalies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 1182px) {
+    .anomalies {
+        flex-direction: column;
+    }
+    .gallery{
+        display: flex;
+    }
+}
