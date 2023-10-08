@@ -88,9 +88,26 @@ header h1 {
     background-size: cover;
 }
 
-.supportLinksPanel span{
-    display: block;
+.supportLinksPanel {
+    text-align: left; /* Align the buttons to the left */
+    margin-left: 20px; /* Add margin to control their distance from the left edge */
 }
+
+.my-button {
+    display: inline-block; /* Display the buttons in a line */
+    margin-right: 5px; /* Adjust the margin to control spacing between buttons horizontally */
+    padding: 5px 10px; /* Adjust padding as needed */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+/* Remove the display: inline-block; from .my-button, as it's needed for inline alignment */
+
+
 
 .upload-buttons{
     display: flex;

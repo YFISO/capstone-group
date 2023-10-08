@@ -44,6 +44,32 @@
             <button class="small-button" id="newButtonProperties">NEW</button> <!-- Replaced "Print" with "NEW" button -->
         </div>
     </div>
+
+    <section class="larger-section">
+        <div class="supportLinksPanel">
+            <div class="my-button"><button onclick="toggleSection('helpInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Help</button></div>
+            <div class="my-button"><button onclick="toggleSection('tutorialInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Tutorial</button></div>
+            <div class="my-button"><button onclick="toggleSection('communityInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Community</button></div>
+        </div>
+        
+        <div id="helpInfo" style="display: none;">
+            <!-- Content for the Help section -->
+            <p>This is the Help section. Here, you can find information and resources to assist you with your questions and issues.</p>
+            <!-- Add more content as needed -->
+        </div>
+        
+        <div id="tutorialInfo" style="display: none;">
+            <!-- Content for the Tutorial section -->
+            <p>Welcome to the Tutorial section. Here, you can access various tutorials to help you learn and improve your skills.</p>
+            <!-- Add more content as needed -->
+        </div>
+        
+        <div id="communityInfo" style="display: none;">
+            <!-- Content for the Community section -->
+            <p>This is the Community section. Connect with others, ask questions, and engage with the community to get support and share knowledge.</p>
+            <!-- Add more content as needed -->
+        </div>  
+    </section>
         
 
     </header>
@@ -94,31 +120,6 @@
             
         </section>
             <!-- Empty container for the new widget -->
-<section class="larger-section">
-    <div class="supportLinksPanel">
-        <div><button onclick="toggleSection('helpInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Help</button></div>
-        <div><button onclick="toggleSection('tutorialInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Tutorial</button></div>
-        <div><button onclick="toggleSection('communityInfo')"><ion-icon name="chevron-forward-outline"></ion-icon>Community</button></div>
-    </div>
-    
-    <div id="helpInfo" style="display: none;">
-        <!-- Content for the Help section -->
-        <p>This is the Help section. Here, you can find information and resources to assist you with your questions and issues.</p>
-        <!-- Add more content as needed -->
-    </div>
-    
-    <div id="tutorialInfo" style="display: none;">
-        <!-- Content for the Tutorial section -->
-        <p>Welcome to the Tutorial section. Here, you can access various tutorials to help you learn and improve your skills.</p>
-        <!-- Add more content as needed -->
-    </div>
-    
-    <div id="communityInfo" style="display: none;">
-        <!-- Content for the Community section -->
-        <p>This is the Community section. Connect with others, ask questions, and engage with the community to get support and share knowledge.</p>
-        <!-- Add more content as needed -->
-    </div>  
-</section>
 
     <footer>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
